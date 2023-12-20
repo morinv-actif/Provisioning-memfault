@@ -1,0 +1,32 @@
+menu "WiFi Provisioning Sample"
+
+config WIFI_PROV_ADV_DATA_UPDATE
+	bool "Enable periodic update of advertisement data"
+	default y
+
+if WIFI_PROV_ADV_DATA_UPDATE
+
+	config WIFI_PROV_ADV_DATA_UPDATE_INTERVAL
+		int "Periodic update interval in second"
+		default 5
+
+endif # WIFI_PROV_ADV_DATA_UPDATE
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
+
+
+module = MILO_FW
+module-str = Milo firmware
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+module = APPLAYER_WIFI_PROV
+module-str = APPLAYER wifi provisioning module
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+module = APPLAYER_MEMFAULT
+module-str = APPLAYER_MEMFAULT
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"

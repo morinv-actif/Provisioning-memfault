@@ -1,0 +1,25 @@
+/ {
+	aliases {
+		imu = &lsm6dso_shub;
+	};
+};
+
+&arduino_i2c {
+
+	lsm6dso_shub: lsm6dso@6b {
+		compatible = "st,lsm6dso";
+		status = "okay";
+		reg = <0x6b>;
+		irq-gpios =  <&arduino_header 11 GPIO_ACTIVE_HIGH>; /* D5 */
+		int-pin = <2>;
+        drdy-pulsed;
+
+        accel-odr = <2>;
+        accel-range = <3>;
+        accel-pm = <1>;
+
+        gyro-odr = <2>;
+        gyro-range = <4>;
+        gyro-pm = <1>;
+	};
+};
