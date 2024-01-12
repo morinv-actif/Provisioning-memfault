@@ -150,6 +150,7 @@ void start_memfault(void)
      */
     LOG_INF("Bringing network interface up and connecting to the network");
 
+    // Actif: Kept uncommented since it seem this was not the cause.
     if (conn_mgr_all_if_up(true))
     {
         __ASSERT(false, "conn_mgr_all_if_up, error");

@@ -13,7 +13,7 @@
             "cacheVariables": {
                 "NCS_TOOLCHAIN_VERSION": "NONE",
                 "BOARD": "nrf7002dk_nrf5340_cpuapp",
-                "BOARD_ROOT": "${sourceDir}/",
+                "BOARD_ROOT": "${sourceDir}/;.",
                 "CONF_FILE": "${sourceDir}/prj.conf;${sourceDir}/boards/nrf7002dk_nrf5340_cpuapp.conf",
                 "EXTRA_CONF_FILE": "${sourceDir}/configs/overlay-debug.conf;${sourceDir}/configs/overlay-memfault.conf;${sourceDir}/configs/overlay_wifi_provisioning.conf",
                 "DTC_OVERLAY_FILE": "${sourceDir}/boards/nrf7002dk_nrf5340_cpuapp.overlay"
